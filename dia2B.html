@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dia2B</title>
+</head>
+<body>
+    <script>
+        let precio = 52.5765719
+        document.write(precio.toFixed(3)) // 52.577
+        document.write('<br>')
+      
+        let nombre, edad, direccion, telefono, email
+        nombre = prompt('INGRESE SU NOMBRE...')
+        edad = prompt('INGRESE SU EDAD...')
+        direccion = prompt('INGRESE SU DIRECCION...')
+        telefono = prompt('INGRESE SU TELEFONO...')
+        email = prompt('INGRESE SU EMAIL...') 
+    
+        document.write("Nombre:",` ${nombre}`)
+        document.write('<br>')
+        document.write('Edad:',` ${edad}`)
+        document.write('<br>')
+        document.write('Direccion:',` ${direccion}`)
+        document.write('<br>')
+        document.write('Telefono:',` ${telefono}`)
+        document.write('<br>')
+        document.write('Email:',` ${email}`)
+        document.write('<br>')
+        //averiguo si nombre no esta vacio 
+        if (nombre.trim() !== '') {  //trim elimina los espacios
+            document.write(nombre)
+        } else{
+            document.write('El nombre esta vacio')
+        }
+        document.write('<br>')
+        //averiguo si el numero es mas que el 0
+        if (edad > 0) {
+             document.write(edad)
+        } else{
+            document.write('No es mas grande que 0')
+        }
+        
+        //averiguo si el email contiene una @ y un .
+        let texto = 'hola@comoestas.com'
+        document.write('Posicion del @: ',texto.indexOf('@')) 
+        document.write('<br>')
+        //si el resultado es -1 es invalido
+        document.write('Posicion del .',texto.indexOf('.'))
+        //si contiene una @ y un . averiguo si el punto no esta al final
+        //y debe contener algo detras del . 
+        document.write('<br>')
+
+        if (texto.includes('@','.')){ //verificar la presencia del carácter '@' en una cadena.
+              document.write('El texto si contiene la @ y el .')
+        } else{
+            document.write('El texto no contiene la @ y el .')
+        }
+        document.write('<br>')
+        document.write((texto.substring(texto.indexOf('.'))).length) //Desde el punto hasta el final del texto 
+        document.write('<br>')
+        document.write(texto.indexOf('@') !== -1); //Averigua si la @ esta dentro del texto si es -1 no lo esta
+        
+
+
+    </script>
+</body>
+</html>
