@@ -1,55 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dia 3</title>
 </head>
+
 <body>
     <script>
         let precio = 100.00
         document.write('Precio: ', precio)
         document.write('<br>')
         precio = 200.00
-        document.write('Segundo precio: ',precio)
-        
+        document.write('Segundo precio: ', precio)
+
         let a, b, sum, res, mult, div, resid, poten
         //pedir datos al usuario
-        a = prompt('INGRESE VALOR 1...')
-        b = prompt('INGRESE VALOR 2...')
-        document.write('<br>')
-        
-    // la tengo convertir a un integer (numero)
-    a = parseFloat(a)   // lo convierte en un numero entero  
-    b = parseFloat(b)
-    if ((typeof(a) === 'number') && (typeof(b) === 'number')){
+        a = prompt('INGRESE VALOR A...')
+        b = prompt('INGRESE VALOR B...')
 
         document.write('<br>')
 
-        //suma 
-        sum = (a + b).toFixed(1)
-        //resta
-        res = (a - b).toFixed(1)
-        //multiplicacion
-        mult = (a * b).toFixed(1)
-        //cocienete resultado de la division
-        div = (a / b).toFixed(2)
-        //residuo es el resultado final de una division
-        resid = (a % b).toFixed(1)
-        //potencia
-        poten = (a ** b).toFixed(1)
+        if ((typeof (a) != "string") && (typeof (b) != "string")) {
+            document.write('a y b son de tipo string')
         
-        document.write('La suma es: ', sum)
+
         document.write('<br>')
-        document.write('La diferencia es: ', res)
-        document.write('<br>')
-        document.write('La multiplicacion es: ', mult)
-        document.write('<br>')
-        document.write('El cociente es: ', div)
-        document.write('<br>')
-        document.write('El residuo es: ', resid)
-        document.write('<br>')
+        a = parseFloat(a)   // lo convierte en un numero entero  
+        b = parseFloat(b)
+        document.write(typeof (a))
+
+        if ((typeof (a) === 'number') && (typeof (b) === 'number')) {
+
+            document.write('<br>')
+
+            //suma 
+            sum = (a + b).toFixed(1)
+            //resta
+            res = (a - b).toFixed(1)
+            //multiplicacion
+            mult = (a * b).toFixed(1)
+            //cocienete resultado de la division
+            //controlo que b es = 0
+            if (b != 0) {
+                div = (a / b).toFixed(2)
+            } else {
+                div = 0
+            }
+            //si b no es igual cero 
+            if (b != 0) {
+                resid = (a % b).toFixed(1)
+            } else {
+                resid = 0
+            }
+            //residuo es el resultado final de una division a/b y el resto de la division
+            //potencia
+            poten = (a ** b).toFixed(1)
+
+            document.write('La suma es: ', sum)
+            document.write('<br>')
+            document.write('La diferencia es: ', res)
+            document.write('<br>')
+            document.write('La multiplicacion es: ', mult)
+            document.write('<br>')
+            document.write('Resultado de la division es: ', div)
+            document.write('<br>')
+            document.write('El residuo es: ', resid)
+            document.write('<br>')
+
+        }
     }
     </script>
 </body>
+
 </html>
